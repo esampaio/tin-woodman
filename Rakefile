@@ -11,7 +11,7 @@ end
 desc "Starts 6 workers"
 task :run do
   puts "Starting 6 workers..."
-  system "BACKGROUND=yes TERM_CHILD=1 COUNT=6 QUEUE=* rake resque:workers"
+  system "BACKGROUND=yes TERM_CHILD=1 COUNT=6 QUEUE=file_download rake resque:workers"
   puts "Workers started!"
 end
 
