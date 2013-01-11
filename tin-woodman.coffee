@@ -14,7 +14,7 @@ unless iss_id? and iss_id > 0
 casper.on 'page.created', (newPage) ->
   newPage.onPageCreated = (page) ->
     page.onResourceReceived = (response) ->
-      console.log "Downloading: " + response.url + ' into ./xmls/' + iss_id + '.xml' if response.stage = 'end'
+      console.log './xmls/' + iss_id + '.xml' if response.stage = 'end'
       casper.download(response.url, 'xmls/' + iss_id + '.xml') if response.stage = 'end'
       casper.exit()
 
