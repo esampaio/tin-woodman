@@ -47,6 +47,11 @@ workers by running:
 ```
 rake run
 ```
+Whenever the command fails, use the one in *Rakefile*:
+
+```
+BACKGROUND=yes TERM_CHILD=1 COUNT=6 QUEUE=file_download rake resque:workers
+```
 
 They'll immediately start downloading the enqueued invoices and saving them to
 the *./xmls* directory.
